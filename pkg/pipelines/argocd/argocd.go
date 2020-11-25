@@ -162,7 +162,7 @@ func makeAppSource(env *config.Environment, app *config.Application, repoURL str
 	if app.ConfigRepo == nil {
 		return &argoappv1.ApplicationSource{
 			RepoURL: repoURL,
-			Path:    filepath.Join(config.PathForApplication(env, app), "base"),
+			Path:    filepath.Join(config.PathForApplication(env, app), "overlays"),
 		}
 	}
 	return &argoappv1.ApplicationSource{
